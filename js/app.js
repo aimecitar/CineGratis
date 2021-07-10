@@ -1,4 +1,4 @@
-
+import { navUsuario, navAdmin, navSinUsuario } from "./funciones.js";
 import { filterArrays, crearSeccion } from "./funciones.js";
 
 (function destacadas() {
@@ -19,7 +19,8 @@ import { filterArrays, crearSeccion } from "./funciones.js";
   if (peliculas.some((pelicula) => pelicula.category === "Comedia")) {
     const arrayPeliculas = filterArrays(peliculas, (categoria = "Comedia"));
     crearSeccion(arrayPeliculas, "Comedia");
-import { navUsuario, navAdmin, navSinUsuario } from "./funciones.js";
+  }
+})();
 
 (function () {
   const user = JSON.parse(localStorage.getItem("usuario"));
@@ -48,6 +49,5 @@ import { navUsuario, navAdmin, navSinUsuario } from "./funciones.js";
     nav.innerHTML = navSinUsuario(user);
     header.append(nav);
     return;
-
   }
 })();
